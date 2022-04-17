@@ -44,23 +44,31 @@ nav{
 .navigation-left li{
     margin: 0px 16px 0px 0px;
     display: inline-block;
+    color: hsl(0, 0%, 100%);
+    transition: color 400ms ease;
     height: 56px;
+    position: relative;
 }
 
 .navigation-left li a {
     text-decoration: none;
-    color: hsl(0, 0%, 100%);
     padding: 16px 0px;
     transition: opacity 400ms ease;
+    color: inherit;
     display: inline-block;
 }
 
 .navigation-left li a:hover svg path{
     stroke: hsl(0, 0%, 100%);
+    transition: stroke 400ms ease;
 }
 
 .navigation-left li a:hover {
     opacity: 0.75;
+}
+
+.navigation-left li:hover{
+    color: hsla(0, 0%, 100%, 0.75);
 }
 
 .navigation-left li a svg{
@@ -72,6 +80,57 @@ nav{
 
 .navigation-left li a svg path{
     stroke: hsla(0, 0%, 100%, 0.5);
+}
+
+.dropdown-menu-options{
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    width: 300px;
+    background-color: var(--nav-bg);
+    padding: 24px;
+    padding-bottom: 32px;
+    border-radius: 6px;
+    display: none;
+}
+
+.dropdown-menu-options li{
+    height: 30px;
+    width: 100%;
+}
+
+.dropdown-menu-options li a{
+    font-size: 14px;
+    line-height: 14px;
+    padding: 8px 0px;
+    width: 100%;
+    color: hsl(212, 9%, 58%);
+}
+
+.dropdown-menu-options li a:hover{
+    opacity: 1;
+    color: hsl(212, 100%, 67%) !important;
+}
+
+.dropdown-separator{
+    margin-top: 16px;
+    padding-top: 24px !important;
+    border-top: 1px solid hsl(212, 12%, 21%);
+}
+
+.dropdown-separator-mono{
+    font-family: ui-monospace,SFMono-Regular,SF Mono,Menlo,Consolas,Liberation Mono,monospac !important;
+    font-size: 12px;
+    line-height: 18px !important;
+    height: 35px !important;
+    color: hsl(212, 9%, 58%);
+    margin: 16px 0px 4px 0px !important;
+    padding-top: 16px;
+    border-top: 1px solid hsl(212, 12%, 21%);
+}
+
+.navigation-left li:hover .dropdown-menu-options{
+    display: block;
 }
 
 /* .navigation-right */
@@ -97,6 +156,10 @@ nav{
     align-items: center;
 }
 
+.search-label:focus-within{
+    background-color: var(--nav-bg);
+}
+
 #search{
     width: 100%;
     line-height: 20px;
@@ -111,6 +174,13 @@ nav{
 
 #search::placeholder{
     color: hsl(270, 17%, 82%);
+}
+
+.search-label svg{
+    margin-right: 8px;
+}
+.search-label:focus-within svg{
+    display: none;
 }
 
 .sign-in{
@@ -138,6 +208,11 @@ nav{
     opacity: 0.75;
 }
 
-.search-label svg{
-    margin-right: 8px;
+
+.bold{
+    font-weight: 600;
+}
+
+.dropdown-white{
+    color: hsl(210, 17%, 82%)!important;
 }
